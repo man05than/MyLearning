@@ -1,0 +1,32 @@
+public class ReportCreated<T>
+{
+    // common properties and methods for all three classes can go here
+    public string ReportName { get; set; }
+    public DateTime CreationDate { get; set; }
+    public T ReportDetails { get; set; }
+}
+
+// Usage examples:
+var caseDetailsReport = new CaseDetailsReportCreated();
+var report = new ReportCreated<CaseDetailsReportCreated>
+{
+    ReportName = "Case Details Report",
+    CreationDate = DateTime.Now,
+    ReportDetails = caseDetailsReport
+};
+
+var evidenceDetailsReport = new EvidenceDetailsReportCreated();
+var report2 = new ReportCreated<EvidenceDetailsReportCreated>
+{
+    ReportName = "Evidence Details Report",
+    CreationDate = DateTime.Now,
+    ReportDetails = evidenceDetailsReport
+};
+
+var batesStampIndexReport = new BatesStampIndexReportCreated();
+var report3 = new ReportCreated<BatesStampIndexReportCreated>
+{
+    ReportName = "Bates Stamp Index Report",
+    CreationDate = DateTime.Now,
+    ReportDetails = batesStampIndexReport
+};
